@@ -3,7 +3,7 @@ FROM debian:10.2-slim
 RUN apt-get update \
  #
  # Install basic admin tools
- && apt-get install --no-install-recommends --assume-yes sudo curl ca-certificates \
+ && apt-get install --no-install-recommends --assume-yes sudo curl ca-certificates gnupg apt-transport-https \
  #
  # Install networking tools
  && apt-get install --no-install-recommends --assume-yes iproute2 nmap ncat tshark ethtool \
