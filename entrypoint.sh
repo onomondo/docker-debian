@@ -16,4 +16,4 @@ for interface in $(get_all_interfaces); do
 done
 unset interface
 
-exec ${@}
+exec bash -c "${@}"
