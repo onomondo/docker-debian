@@ -6,7 +6,7 @@ RUN apt-get update \
  && apt-get install --no-install-recommends --assume-yes sudo curl ca-certificates gnupg apt-transport-https \
  #
  # Install networking tools
- && apt-get install --no-install-recommends --assume-yes iproute2 nmap ncat tshark ethtool iputils-ping net-tools \
+ && apt-get install --no-install-recommends --assume-yes iproute2 nmap ncat tshark ethtool iputils-ping net-tools iptables \
  #
  # Clean up
  && apt-get autoremove -y \
