@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-
-set -euo pipefail
+set -o pipefail -o errexit -o errtrace -o nounset
 shopt -s nullglob globstar
+IFS=$'\n\t'
+
+trap 'echo "Docker Entrypoint FAILED!" >&2' ERR
 
 for file in /etc/profile.d/*.sh; do
   if [ -r "${file}" ]; then
