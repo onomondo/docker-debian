@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:11.2-slim
 
 RUN apt-get update \
  #
