@@ -1,0 +1,16 @@
+# Since Docker users are looking for the smallest possible final images, the
+# following emerges as a very common pattern:
+
+#   RUN apt-get update \
+#       && apt-get install --assume-yes --no-install-recommends <packages> \
+#       && <do some compilation work> \
+
+# The default Debian recommendations is assuming that the system is a desktop,
+# or other system where you don't mind a lot of nice to haves
+# This includes packages recommending X11, fonts, etc.
+# In most cases you do not want this in a container environment, unless it is
+# truely needed.
+# Disabling these by default results in the user being a bit more explicit about
+# what they want to have installed.
+APT::Install-Recommends "0";
+APT::Install-Suggests "0";
